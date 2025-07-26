@@ -1,0 +1,116 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-container::before,
+.home-container::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  opacity: 0.25;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.home-container::before {
+  top: -100px;
+  left: -100px;
+  background: #42a5f5;
+}
+
+.home-container::after {
+  bottom: -100px;
+  right: -100px;
+  background: #66bb6a;
+}
+
+.home-container h1 {
+  font-size: 58px;
+  font-weight: 900;
+  color: #0d47a1;
+  margin-bottom: 20px;
+  letter-spacing: 1.2px;
+  z-index: 1;
+  text-shadow: 1px 1px 2px #ccc;
+}
+
+.home-container p {
+  font-size: 22px;
+  color: #555;
+  margin-bottom: 48px;
+  max-width: 640px;
+  z-index: 1;
+  line-height: 1.6;
+}
+
+.login-buttons {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 1;
+}
+
+.admin-btn, .student-btn {
+  padding: 16px 44px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.4s ease;
+  color: white;
+  background-size: 200% auto;
+}
+
+.admin-btn {
+  background-image: linear-gradient(to right, #2196f3 0%, #0d47a1 51%, #2196f3 100%);
+}
+
+.student-btn {
+  background-image: linear-gradient(to right, #4caf50 0%, #1b5e20 51%, #4caf50 100%);
+}
+
+.admin-btn:hover,
+.student-btn:hover {
+  background-position: right center;
+  transform: scale(1.06);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.admin-btn::after,
+.student-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: skewX(-25deg);
+  transition: all 0.7s ease;
+}
+
+.admin-btn:hover::after,
+.student-btn:hover::after {
+  left: 150%;
+}
+
