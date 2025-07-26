@@ -1,7 +1,7 @@
-* ClarioBuddy - A Centralized Student Utility Hub
+**ClarioBuddy** - A Centralized Student Utility Hub
 ClarioBuddy is a centralized web platform designed to streamline essential campus services such as announcements, timetable updates, lost & found, complaints, and interactive polls. Built with a responsive and modern UI, it ensures students and admins can collaborate and communicate efficiently across a single hub.
 
-* Tech Stack Used
+**Tech Stack Used**
 Area	Technology
 Frontend	React.js
 Backend	Firebase Functions
@@ -9,7 +9,7 @@ Database	Firebase Firestore
 Auth	Firebase GoogleAuth
 Deployment	Netlify
 
-* Features
+**Features**
 Google Login for Students and Admins
 Admin Announcement Posting 
 Lost & Found Management
@@ -17,7 +17,7 @@ Timetable Uploads
 Complaint Box with Admin View
 Polls & Feedback (Student Voting System)
 
-* Folder Structure
+**Folder Structure**
 src/
 ├── components/      # Reusable UI Components
 ├── pages/           # Home, Login, Dashboards (Admin & Student)
@@ -25,7 +25,7 @@ src/
 ├── firebase.js      # Firebase Configuration
 ├── App.js           # Main Routing
 
-* Team Members & Roles
+**Team Members & Roles**
       Name	                           Role
 Charan Madhav S       	Frontend Lead & Firebase Integration
 Angelin Sharmell E	    Frontend Developer
@@ -35,7 +35,7 @@ Kanishka VJ	            Firestore Database Design
 * Screenshots
 (https://drive.google.com/drive/folders/1s5jxWtpz0YmXd2zv-I618ynvuflUuxg1?usp=drive_link)
 
-* Setup Instructions
+**Setup Instructions**
 
   🔹 Prerequisites
 Node.js & npm
