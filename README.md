@@ -79,7 +79,7 @@ Set Build Command to: npm run build
 Set Publish Directory to: build/
 Add environment variables in Netlify dashboard
 
-* Authentication & Firestore Rules
+**Authentication & Firestore Rules**
 js
 Copy
 Edit
@@ -101,8 +101,7 @@ service cloud.firestore {
   }
 }
 Deployment
+
 Frontend: React deployed on Netlify
-
 Backend: Firebase Functions (Firestore + Auth)
-
 Database: Firebase Firestore
