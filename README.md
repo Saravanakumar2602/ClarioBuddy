@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+* ClarioBuddy - A Centralized Student Utility Hub
+ClarioBuddy is a centralized web platform designed to streamline essential campus services such as announcements, timetable updates, lost & found, complaints, and interactive polls. Built with a responsive and modern UI, it ensures students and admins can collaborate and communicate efficiently across a single hub.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* Tech Stack Used
+Area	Technology
+Frontend	React.js
+Backend	Firebase Functions
+Database	Firebase Firestore
+Auth	Firebase GoogleAuth
+Deployment	Netlify
 
-## Available Scripts
+* Features
+Google Login for Students and Admins
+Admin Announcement Posting 
+Lost & Found Management
+Timetable Uploads
+Complaint Box with Admin View
+Polls & Feedback (Student Voting System)
 
-In the project directory, you can run:
+* Folder Structure
+src/
+├── components/      # Reusable UI Components
+├── pages/           # Home, Login, Dashboards (Admin & Student)
+├── styles/          # All .css files (modular)
+├── firebase.js      # Firebase Configuration
+├── App.js           # Main Routing
 
-### `npm start`
+* Team Members & Roles
+      Name	                           Role
+Charan Madhav S       	Frontend Lead & Firebase Integration
+Angelin Sharmell E	    Frontend Developer
+Saravanakumar G	        GitHub Management & Netlify Deployment
+Kanishka VJ	            Firestore Database Design
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Screenshots
+(https://drive.google.com/drive/folders/1s5jxWtpz0YmXd2zv-I618ynvuflUuxg1?usp=drive_link)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Setup Instructions
 
-### `npm test`
+  🔹 Prerequisites
+Node.js & npm
+Firebase CLI
+Git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🔹 Frontend Setup (React)
+bash
+Copy
+Edit
+git clone [https://github.com/your-org/CampusLink.git](https://github.com/Saravanakumar2602/ClarioBuddy.git)
+cd CampusLink
+npm install
 
-### `npm run build`
+🔹 Firebase Setup
+Create a Firebase project https://console.firebase.google.com
+Enable Authentication > Google
+Set up Cloud Firestore
+Copy Firebase Config into .env file:
+env
+Copy
+Edit
+REACT_APP_FIREBASE_API_KEY=AIzaSyB2AwXbwCr5KqXftx--BCMVaQFTQfRxMkI
+REACT_APP_FIREBASE_AUTH_DOMAIN=campuslink-844cd.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=campuslink-844cd
+REACT_APP_FIREBASE_STORAGE_BUCKET=campuslink-844cd.firebasestorage.app
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=159703839663
+REACT_APP_FIREBASE_APP_ID=1:159703839663:web:1d9ddfbd7be9a78cb0f55a
+REACT_APP_FIREBASE_MEASUREMENT_ID=G-WH7YY1ZKE6
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🔹 Run Locally
+bash
+Copy
+Edit
+npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+🔹 Deploy to Netlify
+Push code to GitHub
+Connect Netlify to GitHub repo
+Set Build Command to: npm run build
+Set Publish Directory to: build/
+Add environment variables in Netlify dashboard
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Authentication & Firestore Rules
+js
+Copy
+Edit
+// Firestore (Basic example)
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /announcements/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    match /lostFound/{docId} {
+      allow read, write: if request.auth != null;
+    }
+    match /complaints/{docId} {
+      allow create: if request.auth != null;
+      allow delete, update: if request.auth.token.email == "admin_email";
+    }
+  }
+}
+Deployment
+Frontend: React deployed on Netlify
 
-### `npm run eject`
+Backend: Firebase Functions (Firestore + Auth)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Database: Firebase Firestore
