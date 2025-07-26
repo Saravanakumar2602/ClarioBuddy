@@ -24,6 +24,7 @@ src/
 ├── styles/          # All .css files (modular)
 ├── firebase.js      # Firebase Configuration
 ├── App.js           # Main Routing
+The project follows a clean and modular folder structure to maintain scalability and readability. Inside the src directory, the components folder contains all the reusable UI components that can be used across multiple pages, ensuring code reusability and consistency. The pages folder holds the main views or screens of the application, such as the Home page, Login page, and both Admin and Student Dashboards. For styling, all CSS files are organized inside the styles folder, typically using modular CSS to scope styles to specific components. The firebase.js file is placed directly under src to handle Firebase configuration and initialization for authentication or database features. Finally, the App.js file serves as the central routing component where all routes to various pages are defined, acting as the main entry point for navigating between components and pages in the app.
 
 **Team Members & Roles**
       Name	                           Role
