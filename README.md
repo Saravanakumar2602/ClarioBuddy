@@ -1,4 +1,4 @@
-**ClarioBuddy** - A Centralized Student Utility Hub
+**ClarioBuddy** - A Centralized Student Utility Hub - https://clario-buddy.netlify.app/
 ClarioBuddy is a centralized web platform designed to streamline essential campus services such as announcements, timetable updates, lost & found, complaints, and interactive polls. Built with a responsive and modern UI, it ensures students and admins can collaborate and communicate efficiently across a single hub.
 
 **Tech Stack Used**
